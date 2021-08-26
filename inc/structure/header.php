@@ -242,7 +242,6 @@ if ( ! function_exists( 'generate_construct_header_widget' ) ) {
 	 */
 	function generate_construct_header_widget() {
 		if ( is_active_sidebar( 'header' ) ) : 
-			wp_enqueue_script( 'header-label-css' );
 		?>
 			<div class="header-widget">
 				<?php dynamic_sidebar( 'header' ); ?>
