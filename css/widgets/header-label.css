@@ -1,0 +1,18 @@
+/*! CSS Used from: Embedded */
+.header__label {
+  background: #8ebe20;
+  box-shadow: 0 12px 18px -6px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  display: block;
+  min-width: 150px;
+  max-width: 170px;
+  padding: 10px;
+  text-decoration: none;
+  transform: rotate(-5deg);
+}
+.header__label:not(:last-child) {
+  margin-bottom: 10px;
+}
+.header__labels {
+  padding: 10px 0 10px 5px;
+}
