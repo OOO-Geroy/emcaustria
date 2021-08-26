@@ -73,7 +73,7 @@ if ( ! function_exists( 'generate_scripts' ) ) {
 		}
 
 		wp_register_style( 'K8_SHORT_FAQ-css', get_template_directory_uri() . '/templz/shortcodes/K8_SHORT_FAQ/css/style.css', array(), GENERATE_VERSION, 'all' );
-	
+		wp_register_style( 'EMC_SHORT_YT-css', get_template_directory_uri() . '/templz/shortcodes/EMC_SHORT_YT/css/style.css', array(), GENERATE_VERSION, 'all' );
 	}
 }
 

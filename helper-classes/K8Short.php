@@ -27,7 +27,8 @@ class K8Short
 
 	public $url;
 
-	public function __construct( $atts ){
+	public function __construct($atts)
+	{
 		$this->url = '#';
 
 		$this->true_icon = $atts['true'];
@@ -64,28 +65,31 @@ class K8Short
 		/**
 		 * [K8_SHORT_FAQ] generates schema markup for FAQ pages
 		 */
-		add_shortcode( 'K8_SHORT_FAQ', array( $this, 'faq' ) );
+		add_shortcode('K8_SHORT_FAQ', array($this, 'faq'));
+		add_shortcode('EMC_SHORT_YT', array($this, 'yt'));
 	}
 
-	public function tbl_start( $attr = array() ){
+	public function tbl_start($attr = array())
+	{
 		$str = '<div class="k8_tbl-resp %s"><table class="k8_compare-tbl mtb-30"><tbody>';
-		( isset( $attr['add_clss'] ) ) ? $add_clss = $attr['add_clss'] : $add_clss = '';
-		return sprintf( $str, $add_clss );
+		(isset($attr['add_clss'])) ? $add_clss = $attr['add_clss'] : $add_clss = '';
+		return sprintf($str, $add_clss);
 	}
 	// generates schema markup for FAQ pages
 	// [K8_SHORT_FAQ]
-	public function faq( $atts, $content, $tag ){
-		$a = shortcode_atts( array(
+	public function faq($atts, $content, $tag)
+	{
+		$a = shortcode_atts(array(
 			'output' => 'design1',
 			'vpnid' => get_the_ID(),
-		), $atts );
+		), $atts);
 		$q_o = get_queried_object();
 		$k8_acf_faq = get_field('k8_acf_faq', $q_o->ID);
-		if(strpos($_SERVER['REQUEST_URI'], '/amp/')){
-			$a["output"] = 'amp/'.$a["output"];
+		if (strpos($_SERVER['REQUEST_URI'], '/amp/')) {
+			$a["output"] = 'amp/' . $a["output"];
 		}
 		ob_start();
-		if ( $k8_acf_faq && is_array( $k8_acf_faq ) && count( $k8_acf_faq ) > 0 ) :
+		if ($k8_acf_faq && is_array($k8_acf_faq) && count($k8_acf_faq) > 0) :
 			include $this->templ_url . $tag . '/' . $a["output"] . '.php';
 			$schema = K8Schema::getFaqPage([
 				'k8_acf_faq' => $k8_acf_faq
@@ -96,6 +100,27 @@ class K8Short
 		return $html;
 	}
 
+	public function yt($atts)
+	{
+		$a = shortcode_atts(array(
+			'id' => 'dkPLIw9aZwY',
+			'output' => 'design1',
+		), $atts);
+		$img_name = 'maxresdefault.jpg';
+		if (!url_exists("http://img.youtube.com/vi/" . $a['id'] . "/maxresdefault.jpg"))
+			$img_name = 'hqdefault.jpg';
+
+		ob_start();
+		include $this->templ_url . $tag . '/' . $a["output"] . '.php';
+		$html = ob_get_clean();
+
+		return sprintf(
+			$html,
+			$a['id'],
+			$a['id'],
+			$img_name
+		);
+	}
 }
 
 new K8Short([
