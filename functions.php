@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Set our theme version.
-define('GENERATE_VERSION', '2.4.2');
+define('GENERATE_VERSION', '2.4.3');
 
 require_once(__DIR__ . '/K8Init.php');
 
