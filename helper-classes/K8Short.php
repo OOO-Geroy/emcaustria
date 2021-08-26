@@ -100,7 +100,7 @@ class K8Short
 		return $html;
 	}
 
-	public function yt($atts)
+	public function yt($atts, $content, $tag)
 	{
 		$a = shortcode_atts(array(
 			'id' => 'dkPLIw9aZwY',
