@@ -71,6 +71,9 @@ if ( ! function_exists( 'generate_scripts' ) ) {
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
+
+		wp_register_style( 'K8_SHORT_FAQ-css', get_template_directory_uri() . '/templz/shortcodes/K8_SHORT_FAQ/css/style.css', array(), GENERATE_VERSION, 'all' );
+	
 	}
 }
 

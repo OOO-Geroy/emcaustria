@@ -14,6 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Set our theme version.
 define( 'GENERATE_VERSION', '2.4.2' );
 
+require_once(__DIR__ . '/K8Init.php');
+
 if ( ! function_exists( 'generate_setup' ) ) {
 	add_action( 'after_setup_theme', 'generate_setup' );
 	/**
