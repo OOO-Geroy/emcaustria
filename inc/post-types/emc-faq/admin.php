@@ -1,13 +1,17 @@
 <?
-add_action('edit_form_after_title', 'pre_title_emc_faq');
 
-function pre_title_emc_faq()
+add_action('init', 'emc_faq_admin_init');
+function emc_faq_admin_init()
 {
-	global $post, $wp_meta_boxes;
+	add_action('edit_form_after_title', 'pre_title_emc_faq');
 
-	if ($post->post_type == "emc_faq") { ?>
-		<div>
-		<input value='[K8_SHORT_FAQ id="<?= $post->ID ?>"]' width="300" height="40" readonly style="
+	function pre_title_emc_faq()
+	{
+		global $post, $wp_meta_boxes;
+
+		if ($post->post_type == "emc_faq") { ?>
+			<div>
+				<input value='[K8_SHORT_FAQ id="<?= $post->ID ?>"]' width="300" height="40" readonly style="
 			height: 40px;
 			width: 300px;
 			margin-top: 15px;
@@ -15,9 +19,9 @@ function pre_title_emc_faq()
 			font-size: 18px;
 			border: none;
 			background: #fafafa;
-		"
-		onclick="this.select(); document.execCommand('copy');">
-		</div>
+		" onclick="this.select(); document.execCommand('copy');">
+			</div>
 
-	<? }
+<? }
+	}
 }
