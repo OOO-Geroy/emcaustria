@@ -1,2 +1,2 @@
 <?
-require_once 'emc-faq.php';
+require_once 'emc-faq/index.php';

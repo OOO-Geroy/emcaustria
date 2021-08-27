@@ -81,10 +81,9 @@ class K8Short
 	{
 		$a = shortcode_atts(array(
 			'output' => 'design1',
-			'vpnid' => get_the_ID(),
+			'id' => NULL
 		), $atts);
-		$q_o = get_queried_object();
-		$k8_acf_faq = get_field('k8_acf_faq', $q_o->ID);
+		$k8_acf_faq = get_field('k8_acf_faq', (int) $a['id']);
 		if (strpos($_SERVER['REQUEST_URI'], '/amp/')) {
 			$a["output"] = 'amp/' . $a["output"];
 		}
