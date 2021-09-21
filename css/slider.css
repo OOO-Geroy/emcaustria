@@ -1,0 +1,16 @@
+/* align center partners slider */
+#slider_13810 .owl-stage {
+    display: flex;
+    align-items: center;
+}
+#slider_13810 .owl-item p {
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#slider_13810 .owl-item a {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
