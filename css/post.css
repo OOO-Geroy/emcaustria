@@ -1,0 +1,20 @@
+.su-posts-default-loop.su-posts-default-loop .su-post-thumbnail {
+    max-width: 100%;
+    width: 300px;
+    height: auto;
+}
+
+.su-posts-default-loop.su-posts-default-loop .su-post-thumbnail img {
+    width: 100%;
+    max-width: 300px;
+    max-height: none;
+}
+
+@media (max-width: 414px) {
+    .su-posts-default-loop.su-posts-default-loop .su-post-thumbnail {
+        width: 100%;
+    }
+    .su-posts-default-loop.su-posts-default-loop .su-post-thumbnail img {
+        max-width: 100%;
+    }
+}
