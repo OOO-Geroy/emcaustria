@@ -33,6 +33,7 @@ if ( ! function_exists( 'generate_scripts' ) ) {
 
 		wp_enqueue_style( 'sa-slider-cst',  $dir_uri . "/css/slider.css", array( 'generate-style' ), '2.3.22', 'all' );
 		wp_enqueue_style( 'su-post-cst', $dir_uri . "/css/post.css", array( 'generate-style' ), filemtime( get_stylesheet_directory() . '/css/post.css' ), 'all' );
+		wp_enqueue_style( 'teamcard-list', $dir_uri . "/css/teamcard.css", array( 'generate-style' ), filemtime( get_stylesheet_directory() . '/css/teamcard.css' ), 'all' );
 
 		if ( is_child_theme() ) {
 			wp_enqueue_style( 'generate-child', get_stylesheet_uri(), array( 'generate-style' ), filemtime( get_stylesheet_directory() . '/style.css' ), 'all' );
